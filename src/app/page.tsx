@@ -109,17 +109,17 @@ export default function LandingPage() {
         {/* Eyebrow Badge */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f1e7d6] text-[#765f3e] border border-[#e2e5df] text-xs font-mono mb-6 shadow-xs">
           <Feather className="size-3.5 text-[#56715b]" />
-          <span>Distraction-Free Technical Writing</span>
+          <span>Distraction-Free Writing</span>
         </div>
 
         {/* Hero Title */}
-        <h1 className="text-4xl sm:text-6xl font-medium tracking-tight leading-[1.15] text-[#20221f] max-w-3xl mb-6 font-serif">
-          Where speed meets serenity for engineering documentation.
+        <h1 className="text-4xl sm:text-6xl font-medium tracking-tight leading-[1.15] text-[#20221f] max-w-3xl mb-6 font-serif text-balance">
+          Where speed meets serenity for your writing, organization,&nbsp;and&nbsp;ideas.
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg text-[#7b817a] max-w-2xl leading-relaxed font-normal mb-8">
-          No clutter. No redundant popups. What you see is what you get — clean typography, instant markdown rendering, and seamless edge persistence.
+        <p className="text-base sm:text-lg text-[#7b817a] max-w-2xl leading-relaxed font-normal mb-8 text-balance">
+          No clutter. No redundant popups. What you see is what you get. Clean typography, instant markdown rendering, and seamless edge&nbsp;persistence.
         </p>
 
         {/* CTA Waitlist Button Group */}
@@ -251,11 +251,11 @@ export default function LandingPage() {
       {/* KNOWLEDGE HIERARCHY SCHEMATIC SECTION */}
       <section id="philosophy" className="py-20 px-6 max-w-5xl mx-auto bg-[#f1f3ef]/50 rounded-2xl border border-[#e2e5df] my-16 text-center">
         <span className="font-mono text-xs uppercase tracking-wider text-[#56715b] font-semibold">Clean Hierarchy</span>
-        <h2 className="text-3xl font-serif font-medium text-[#20221f] mt-2 mb-4">
+        <h2 className="text-3xl font-serif font-medium text-[#20221f] mt-2 mb-4 text-balance">
           Structured 4-Tier Knowledge Tree
         </h2>
         <p className="text-sm text-[#7b817a] max-w-xl mx-auto mb-10">
-          Simple, intuitive organization for technical books, guides, and personal knowledge bases.
+          Simple, intuitive organization for your notes, guides, books, and personal knowledge base.
         </p>
 
         {/* Tree Diagram Visual */}
@@ -293,9 +293,9 @@ export default function LandingPage() {
         <div className="p-10 rounded-2xl bg-[#56715b] text-[#f8f8f6] shadow-xl relative overflow-hidden">
           <div className="relative z-10">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f8f8f6]/15 text-[#f8f8f6] font-mono text-xs mb-4">
-              <span>SERENE TECHNICAL WRITING</span>
+              <span>SERENE DISTRACTION-FREE WRITING</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-medium mb-4">
+            <h2 className="text-3xl sm:text-4xl font-serif font-medium mb-4 text-balance">
               Experience distraction-free writing.
             </h2>
             <p className="text-sm sm:text-base text-[#f8f8f6]/80 max-w-xl mx-auto mb-8">
@@ -326,7 +326,7 @@ export default function LandingPage() {
               className="size-6 rounded-full object-contain p-0.5 bg-[#e9eee8] border border-[#56715b]/20"
             />
             <span className="font-semibold text-[#20221f]">Kiroku</span>
-            <span>— built by <a href="http://ullaskunder.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#56715b]">ullaskunder.com</a></span>
+            <span>• built by <a href="http://ullaskunder.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#56715b]">ullaskunder.com</a></span>
           </div>
 
           <div className="flex items-center gap-6 font-mono text-[11px]">

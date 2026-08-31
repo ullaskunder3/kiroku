@@ -14,8 +14,8 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kiroku.xyz"),
-  title: "Kiroku — Minimalist Living Library for Engineering Teams",
-  description: "A minimalist, high-speed living library for engineering teams, documentation authors, and personal knowledge bases.",
+  title: "Kiroku: Minimalist Living Library",
+  description: "A minimalist, high-speed living library for writing, organization, and ideas.",
   authors: [{ name: "Ullas Kunder", url: "http://ullaskunder.com/" }],
   creator: "Ullas Kunder",
   publisher: "Ullas Kunder",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     apple: "/ullaskunder.svg",
   },
   openGraph: {
-    title: "Kiroku — Minimalist Living Library for Engineering Teams",
+    title: "Kiroku: Minimalist Living Library",
     description: "A minimalist, high-speed living library combining fluid editing with operational stability.",
     url: "https://kiroku.xyz",
     siteName: "Kiroku",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Kiroku — Minimalist Living Library",
+        alt: "Kiroku: Minimalist Living Library",
       },
     ],
     locale: "en_US",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kiroku — Minimalist Living Library for Engineering Teams",
+    title: "Kiroku: Minimalist Living Library",
     description: "A minimalist, high-speed living library combining fluid editing with operational stability.",
     creator: "@ullaskunder",
     images: ["/og.png"],
