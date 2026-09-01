@@ -9,8 +9,7 @@ import {
   Volume2,
   VolumeX,
   ExternalLink,
-  Feather,
-  CheckCircle
+  Feather
 } from "lucide-react";
 
 export default function LandingPage() {
@@ -22,34 +21,6 @@ export default function LandingPage() {
   // Scroll Animation State for 3D Laptop Screen Opening Effect
   const [rotateX, setRotateX] = useState<number>(22);
   const [scaleVal, setScaleVal] = useState<number>(0.92);
-
-  // In-Page Waitlist Form State
-  const [email, setEmail] = useState<string>("");
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
-
-  const handleWaitlistSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !email.includes("@")) return;
-    setIsSubmitted(true);
-
-    try {
-      await fetch("https://formsubmit.co/ajax/ullaskunder3+wl@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          email: email,
-          _subject: `🎉 New Kiroku Waitlist Sign-Up: ${email}`,
-          message: `A new subscriber joined the Kiroku Waitlist!\n\nEmail: ${email}\nSource: Kiroku Landing Page\nTime: ${new Date().toISOString()}`,
-          _template: "table"
-        })
-      });
-    } catch (err) {
-      console.error("Failed to dispatch waitlist email:", err);
-    }
-  };
 
   // Scroll Listener for Laptop Screen Unfolding Effect
   useEffect(() => {
@@ -150,34 +121,19 @@ export default function LandingPage() {
           No clutter. No redundant popups. What you see is what you get. Clean typography, instant markdown rendering, and seamless edge&nbsp;persistence.
         </p>
 
-        {/* INLINE EMAIL WAITLIST FORM */}
-        {isSubmitted ? (
-          <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#e9eee8] text-[#38503d] border border-[#56715b]/30 text-xs sm:text-sm font-medium mb-8 sm:mb-10 shadow-xs animate-rubber">
-            <CheckCircle className="size-4 text-[#56715b] shrink-0" />
-            <span>You&apos;re on the waitlist! We&apos;ll notify you as soon as early access opens.</span>
-          </div>
-        ) : (
-          <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row items-center gap-2.5 mb-8 sm:mb-10 w-full max-w-md mx-auto">
-            <div className="relative w-full">
-              <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-[#7b817a]" />
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address..."
-                className="w-full h-11 pl-10 pr-4 rounded-full bg-[#fdfdfb] border border-[#e2e5df] text-xs sm:text-sm text-[#20221f] placeholder:text-[#7b817a] focus:outline-none focus:border-[#56715b] focus:ring-2 focus:ring-[#56715b]/20 shadow-xs transition-all"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full sm:w-auto h-11 px-6 rounded-full bg-[#56715b] text-[#f8f8f6] text-xs sm:text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#56715b]/90 active:scale-95 transition-all shadow-md shrink-0 whitespace-nowrap"
-            >
-              <span>Join Waitlist</span>
-              <ArrowRight className="size-4" />
-            </button>
-          </form>
-        )}
+        {/* Hero CTA Button Group */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-8 sm:mb-10 w-full sm:w-auto">
+          <a
+            href="http://ullaskunder.com/wl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full xs:w-auto max-w-xs sm:max-w-none h-11 px-6 sm:px-7 rounded-full bg-[#56715b] text-[#f8f8f6] text-xs sm:text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#56715b]/90 active:scale-95 transition-all shadow-md hover:shadow-lg whitespace-nowrap"
+          >
+            <Mail className="size-4" />
+            <span>Join Early Access Waitlist</span>
+            <ArrowRight className="size-4" />
+          </a>
+        </div>
 
         {/* Elegant Feature Pills - Symmetrical 2x2 Grid on Mobile/Tablet, Single Centered Row on Desktop */}
         <div className="grid grid-cols-1 xs:grid-cols-2 max-w-lg mx-auto md:flex md:max-w-none md:w-full md:flex-wrap md:justify-center md:items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-mono text-[#7b817a]">
@@ -347,32 +303,17 @@ export default function LandingPage() {
             <p className="text-xs sm:text-base text-[#f8f8f6]/80 max-w-xl mx-auto mb-6 sm:mb-8 text-balance">
               Join the private waitlist to get early beta access when we launch.
             </p>
-
-            {/* INLINE BANNER WAITLIST FORM */}
-            {isSubmitted ? (
-              <div className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#f8f8f6]/20 text-[#f8f8f6] border border-[#f8f8f6]/30 text-xs sm:text-sm font-medium backdrop-blur animate-rubber">
-                <CheckCircle className="size-4 text-[#f8f8f6] shrink-0" />
-                <span>You&apos;re on the waitlist! We&apos;ll be in touch.</span>
-              </div>
-            ) : (
-              <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row items-center justify-center gap-2.5 max-w-md mx-auto">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address..."
-                  className="w-full h-11 px-4 rounded-full bg-[#fdfdfb] text-[#20221f] placeholder:text-[#7b817a] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-white/40 shadow-sm"
-                />
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto h-11 px-7 rounded-full bg-[#f8f8f6] text-[#38503d] text-xs sm:text-sm font-semibold hover:bg-[#e9eee8] active:scale-95 transition-all flex items-center justify-center gap-2 shadow-md shrink-0 whitespace-nowrap"
-                >
-                  <span>Join Waitlist</span>
-                  <ArrowRight className="size-4 text-[#38503d]" />
-                </button>
-              </form>
-            )}
+            <div className="flex justify-center">
+              <a
+                href="http://ullaskunder.com/wl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full xs:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#f8f8f6] text-[#38503d] text-xs sm:text-sm font-semibold hover:bg-[#e9eee8] transition-all flex items-center justify-center gap-2 shadow-md hover:scale-105 active:scale-95"
+              >
+                <span>Join Waitlist at ullaskunder.com/wl</span>
+                <ExternalLink className="size-3.5 sm:size-4 shrink-0" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
