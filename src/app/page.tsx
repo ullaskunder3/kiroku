@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import {
-  Sparkles,
   ArrowRight,
   Mail,
   Play,
@@ -63,18 +62,18 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#f8f8f6] text-[#20221f] selection:bg-[#56715b]/20 selection:text-[#20221f]">
       
-      {/* FLOATING PILL HEADER - CLEAN & UNCLUTTERED */}
-      <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-4xl">
-        <div className="bg-[#fdfdfb]/90 backdrop-blur-md border border-[#e2e5df] rounded-full px-5 h-13 flex items-center justify-between shadow-sm transition-all hover:border-[#56715b]/30">
+      {/* FLOATING PILL HEADER - CLEAN & RESPONSIVE */}
+      <header className="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 z-50 w-[94%] sm:w-[92%] max-w-4xl">
+        <div className="bg-[#fdfdfb]/90 backdrop-blur-md border border-[#e2e5df] rounded-full px-3.5 sm:px-5 h-12 sm:h-13 flex items-center justify-between shadow-sm transition-all hover:border-[#56715b]/30">
           
           {/* Left: Clean Bear Icon + Kiroku Title */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 sm:gap-2.5">
             <img 
               src="/ullaskunder.svg" 
               alt="Kiroku Logo" 
-              className="size-7 rounded-full object-contain p-0.5 bg-[#e9eee8] border border-[#56715b]/20"
+              className="size-6 sm:size-7 rounded-full object-contain p-0.5 bg-[#e9eee8] border border-[#56715b]/20"
             />
-            <span className="font-semibold text-base tracking-tight text-[#20221f]">
+            <span className="font-semibold text-sm sm:text-base tracking-tight text-[#20221f]">
               Kiroku
             </span>
           </div>
@@ -92,43 +91,43 @@ export default function LandingPage() {
               href="http://ullaskunder.com/contact"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#56715b] text-[#f8f8f6] text-xs px-4 py-2 rounded-full font-medium hover:bg-[#56715b]/90 transition-all flex items-center gap-1.5 shadow-sm"
+              className="bg-[#56715b] text-[#f8f8f6] text-[11px] sm:text-xs px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium hover:bg-[#56715b]/90 transition-all flex items-center gap-1.5 shadow-sm whitespace-nowrap"
             >
               <span>Join Waitlist</span>
-              <ArrowRight className="size-3.5" />
+              <ArrowRight className="size-3 sm:size-3.5" />
             </a>
           </div>
         </div>
       </header>
 
       {/* HERO SECTION */}
-      <section className="relative pt-36 pb-12 px-6 max-w-5xl mx-auto text-center flex flex-col items-center">
+      <section className="relative pt-28 sm:pt-36 pb-8 sm:pb-12 px-4 sm:px-6 max-w-5xl mx-auto text-center flex flex-col items-center">
         {/* Subtle background glow */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#f1e7d6]/60 rounded-full blur-3xl -z-10 pointer-events-none" />
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-[#f1e7d6]/60 rounded-full blur-3xl -z-10 pointer-events-none" />
 
         {/* Eyebrow Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f1e7d6] text-[#765f3e] border border-[#e2e5df] text-xs font-mono mb-6 shadow-xs">
-          <Feather className="size-3.5 text-[#56715b]" />
-          <span>Distraction-Free Writing</span>
+        <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-[#f1e7d6] text-[#765f3e] border border-[#e2e5df] text-[11px] sm:text-xs font-mono mb-5 sm:mb-6 shadow-xs max-w-full truncate">
+          <Feather className="size-3 sm:size-3.5 text-[#56715b] shrink-0" />
+          <span className="truncate">Distraction-Free Writing</span>
         </div>
 
         {/* Hero Title */}
-        <h1 className="text-4xl sm:text-6xl font-medium tracking-tight leading-[1.15] text-[#20221f] max-w-3xl mb-6 font-serif text-balance">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.18] sm:leading-[1.15] text-[#20221f] max-w-3xl mb-4 sm:mb-6 font-serif text-balance">
           Where speed meets serenity for your writing, organization,&nbsp;and&nbsp;ideas.
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg text-[#7b817a] max-w-2xl leading-relaxed font-normal mb-8 text-balance">
+        <p className="text-sm sm:text-base md:text-lg text-[#7b817a] max-w-2xl leading-relaxed font-normal mb-6 sm:mb-8 text-balance">
           No clutter. No redundant popups. What you see is what you get. Clean typography, instant markdown rendering, and seamless edge&nbsp;persistence.
         </p>
 
         {/* CTA Waitlist Button Group */}
-        <div className="flex flex-col sm:flex-row items-center gap-3.5 mb-10 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-8 sm:mb-10 w-full sm:w-auto">
           <a
             href="http://ullaskunder.com/contact"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto h-11 px-7 rounded-full bg-[#56715b] text-[#f8f8f6] text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#56715b]/90 transition-all shadow-md hover:shadow-lg"
+            className="w-full xs:w-auto max-w-xs sm:max-w-none h-11 px-6 sm:px-7 rounded-full bg-[#56715b] text-[#f8f8f6] text-xs sm:text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#56715b]/90 transition-all shadow-md hover:shadow-lg whitespace-nowrap"
           >
             <Mail className="size-4" />
             <span>Join Early Access Waitlist</span>
@@ -136,20 +135,17 @@ export default function LandingPage() {
           </a>
         </div>
 
-        {/* Elegant Feature Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-[#7b817a]">
-          <span className="px-3 py-1 rounded-md bg-[#e9eee8] text-[#38503d] font-medium">✓ Typewriter Focus</span>
-          <span>•</span>
-          <span className="px-3 py-1 rounded-md bg-[#e9eee8] text-[#38503d] font-medium">✓ Native Math & Diagrams</span>
-          <span>•</span>
-          <span className="px-3 py-1 rounded-md bg-[#e9eee8] text-[#38503d] font-medium">✓ Sub-Millisecond Edge Sync</span>
-          <span>•</span>
-          <span className="px-3 py-1 rounded-md bg-[#e9eee8] text-[#38503d] font-medium">✓ Quiet Hierarchy</span>
+        {/* Elegant Feature Pills - Symmetrical 2x2 Grid on Mobile/Tablet, Single Centered Row on Desktop */}
+        <div className="grid grid-cols-1 xs:grid-cols-2 max-w-lg mx-auto md:flex md:max-w-none md:w-full md:flex-wrap md:justify-center md:items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-mono text-[#7b817a]">
+          <span className="px-3 py-1.5 rounded-md bg-[#e9eee8] text-[#38503d] font-medium shadow-2xs flex items-center justify-center text-center whitespace-nowrap">✓ Typewriter Focus</span>
+          <span className="px-3 py-1.5 rounded-md bg-[#e9eee8] text-[#38503d] font-medium shadow-2xs flex items-center justify-center text-center whitespace-nowrap">✓ Native Math & Diagrams</span>
+          <span className="px-3 py-1.5 rounded-md bg-[#e9eee8] text-[#38503d] font-medium shadow-2xs flex items-center justify-center text-center whitespace-nowrap">✓ Sub-Millisecond Edge Sync</span>
+          <span className="px-3 py-1.5 rounded-md bg-[#e9eee8] text-[#38503d] font-medium shadow-2xs flex items-center justify-center text-center whitespace-nowrap">✓ Quiet Hierarchy</span>
         </div>
       </section>
 
       {/* 3D SCROLL LAPTOP SCREEN FLIP VIDEO SHOWCASE */}
-      <section id="showcase" className="py-8 px-4 sm:px-6 max-w-5xl mx-auto scroll-mt-28">
+      <section id="showcase" className="py-6 sm:py-8 px-3 sm:px-6 max-w-5xl mx-auto scroll-mt-24 sm:scroll-mt-28">
         
         {/* 3D Perspective Container */}
         <div 
@@ -158,27 +154,29 @@ export default function LandingPage() {
             perspective: "1200px",
           }}
         >
-          {/* Opening Laptop Lid Frame */}
+          {/* Sleek Minimal App Window Container */}
           <div
-            className="relative rounded-2xl sm:rounded-3xl border-4 border-[#2c2f2a] bg-[#1e201d] shadow-[0_25px_60px_rgba(32,34,31,0.22)] overflow-hidden transition-all duration-200 ease-out"
+            className="relative rounded-2xl sm:rounded-3xl border border-[#e2e5df] bg-[#1e201d] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-200 ease-out"
             style={{
               transform: `rotateX(${rotateX}deg) scale(${scaleVal})`,
               transformOrigin: "center bottom",
               transformStyle: "preserve-3d",
             }}
           >
-            {/* Laptop Screen Top Camera Notch */}
-            <div className="bg-[#1e201d] h-7 w-full flex items-center justify-between px-4 border-b border-[#2c2f2a] text-[#7b817a] text-[11px] font-mono">
+            {/* Sleek Modern Window Control Bar */}
+            <div className="bg-[#181a17] h-8 sm:h-9 w-full flex items-center justify-between px-3.5 sm:px-4 border-b border-[#2a2d28] text-[#7b817a] text-[11px] font-mono">
               <div className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-[#56715b] animate-pulse" />
-                <span className="text-[#e9eee8] font-sans font-medium text-xs">Distraction-Free Editor Preview</span>
+                <div className="flex items-center gap-1.5">
+                  <span className="size-2.5 rounded-full bg-[#ff5f56]/80" />
+                  <span className="size-2.5 rounded-full bg-[#ffbd2e]/80" />
+                  <span className="size-2.5 rounded-full bg-[#27c93f]/80" />
+                </div>
+                <span className="text-[#a0a59d] font-sans font-medium text-[11px] sm:text-xs ml-2 truncate">Kiroku • Distraction-Free Canvas</span>
               </div>
               
-              {/* WebCam Dot */}
-              <div className="size-2 rounded-full bg-[#2c2f2a] border border-[#3e423b]" />
-              
-              <div className="flex items-center gap-2 text-[10px] text-[#7b817a]">
-                <span>1080p • 60 FPS</span>
+              <div className="hidden sm:flex items-center gap-2 text-[10px] text-[#7b817a]">
+                <span className="size-1.5 rounded-full bg-[#56715b] animate-pulse" />
+                <span>Live Preview</span>
               </div>
             </div>
 
@@ -194,22 +192,22 @@ export default function LandingPage() {
                 className="w-full h-full object-cover"
               />
 
-              {/* Video Overlay Controls */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-4 pointer-events-none">
-                <div className="flex items-center justify-between text-white/90 text-xs font-mono pointer-events-auto">
-                  <span className="bg-black/40 backdrop-blur px-2.5 py-1 rounded border border-white/10">
+              {/* Video Overlay Controls - Touch and Desktop Friendly */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 sm:p-4 pointer-events-none">
+                <div className="flex items-center justify-between text-white/90 text-[10px] sm:text-xs font-mono pointer-events-auto gap-2">
+                  <span className="bg-black/40 backdrop-blur px-2.5 py-1 rounded border border-white/10 truncate">
                     Live Demo Recording
                   </span>
-                  <span className="bg-black/40 backdrop-blur px-2.5 py-1 rounded border border-white/10 text-[#56715b]">
+                  <span className="hidden xs:inline-block bg-black/40 backdrop-blur px-2.5 py-1 rounded border border-white/10 text-[#56715b] shrink-0">
                     ● What You See Is What You Get
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between text-white pointer-events-auto">
-                  <div className="flex items-center gap-3">
+                <div className="flex items-center justify-between text-white pointer-events-auto gap-2">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <button
                       onClick={togglePlay}
-                      className="size-9 rounded-full bg-white/20 backdrop-blur flex items-center justify-center hover:bg-white/30 transition-colors"
+                      className="size-8 sm:size-9 rounded-full bg-white/20 backdrop-blur flex items-center justify-center hover:bg-white/30 active:scale-95 transition-all"
                       title={isPlaying ? "Pause" : "Play"}
                     >
                       {isPlaying ? <Pause className="size-4 text-white" /> : <Play className="size-4 text-white fill-white ml-0.5" />}
@@ -217,7 +215,7 @@ export default function LandingPage() {
 
                     <button
                       onClick={toggleMute}
-                      className="size-9 rounded-full bg-white/20 backdrop-blur flex items-center justify-center hover:bg-white/30 transition-colors"
+                      className="size-8 sm:size-9 rounded-full bg-white/20 backdrop-blur flex items-center justify-center hover:bg-white/30 active:scale-95 transition-all"
                       title={isMuted ? "Unmute" : "Mute"}
                     >
                       {isMuted ? <VolumeX className="size-4 text-white" /> : <Volume2 className="size-4 text-white" />}
@@ -228,7 +226,7 @@ export default function LandingPage() {
                     href="http://ullaskunder.com/contact"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-mono text-white/90 bg-[#56715b] hover:bg-[#56715b]/90 backdrop-blur px-3 py-1.5 rounded-full shadow transition-all flex items-center gap-1.5"
+                    className="text-[10px] sm:text-xs font-mono text-white/90 bg-[#56715b] hover:bg-[#56715b]/90 backdrop-blur px-3 py-1.5 rounded-full shadow transition-all flex items-center gap-1.5 whitespace-nowrap"
                   >
                     <span>Join Waitlist</span>
                     <ExternalLink className="size-3" />
@@ -236,51 +234,55 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-
-            {/* Laptop Screen Bottom Bezel Title */}
-            <div className="bg-[#1e201d] py-1.5 text-center text-[10px] font-mono text-[#7b817a] border-t border-[#2c2f2a]">
-              KIROKU LIVING LIBRARY • SERENE TYPOGRAPHY CANVAS
-            </div>
           </div>
-
-          {/* Laptop Bottom Hinge / Base Notch */}
-          <div className="w-[85%] mx-auto h-2 bg-[#d1d5ce] rounded-b-xl border-t border-[#b8bcae] shadow-sm" />
         </div>
       </section>
 
       {/* KNOWLEDGE HIERARCHY SCHEMATIC SECTION */}
-      <section id="philosophy" className="py-20 px-6 max-w-5xl mx-auto bg-[#f1f3ef]/50 rounded-2xl border border-[#e2e5df] my-16 text-center">
+      <section id="philosophy" className="py-10 sm:py-20 px-4 sm:px-6 max-w-5xl mx-auto bg-[#f1f3ef]/50 rounded-2xl border border-[#e2e5df] my-10 sm:my-16 text-center">
         <span className="font-mono text-xs uppercase tracking-wider text-[#56715b] font-semibold">Clean Hierarchy</span>
-        <h2 className="text-3xl font-serif font-medium text-[#20221f] mt-2 mb-4 text-balance">
+        <h2 className="text-2xl sm:text-3xl font-serif font-medium text-[#20221f] mt-2 mb-3 sm:mb-4 text-balance">
           Structured 4-Tier Knowledge Tree
         </h2>
-        <p className="text-sm text-[#7b817a] max-w-xl mx-auto mb-10">
+        <p className="text-xs sm:text-sm text-[#7b817a] max-w-xl mx-auto mb-8 sm:mb-10 text-balance">
           Simple, intuitive organization for your notes, guides, books, and personal knowledge base.
         </p>
 
         {/* Tree Diagram Visual */}
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-left font-mono text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 text-left font-mono text-xs">
           
-          <div className="p-4 bg-[#fdfdfb] rounded-lg border border-[#e2e5df] shadow-sm">
-            <div className="text-[10px] text-[#56715b] uppercase font-bold mb-1">Level 1</div>
+          <div className="p-4 bg-[#fdfdfb] rounded-lg border border-[#e2e5df] shadow-sm hover:border-[#56715b]/30 transition-colors">
+            <div className="text-[10px] text-[#56715b] uppercase font-bold mb-1 flex items-center justify-between">
+              <span>Level 1</span>
+              <span className="text-[#7b817a] font-normal">Root</span>
+            </div>
             <div className="font-bold text-[#20221f] text-sm">Library</div>
             <div className="text-[#7b817a] text-[11px] mt-1">Company / Workspace root entity</div>
           </div>
 
-          <div className="p-4 bg-[#fdfdfb] rounded-lg border border-[#e2e5df] shadow-sm">
-            <div className="text-[10px] text-[#56715b] uppercase font-bold mb-1">Level 2</div>
+          <div className="p-4 bg-[#fdfdfb] rounded-lg border border-[#e2e5df] shadow-sm hover:border-[#56715b]/30 transition-colors">
+            <div className="text-[10px] text-[#56715b] uppercase font-bold mb-1 flex items-center justify-between">
+              <span>Level 2</span>
+              <span className="text-[#7b817a] font-normal">Module</span>
+            </div>
             <div className="font-bold text-[#20221f] text-sm">📚 Book</div>
             <div className="text-[#7b817a] text-[11px] mt-1">Custom title & brand accent color</div>
           </div>
 
-          <div className="p-4 bg-[#fdfdfb] rounded-lg border border-[#e2e5df] shadow-sm">
-            <div className="text-[10px] text-[#56715b] uppercase font-bold mb-1">Level 3</div>
+          <div className="p-4 bg-[#fdfdfb] rounded-lg border border-[#e2e5df] shadow-sm hover:border-[#56715b]/30 transition-colors">
+            <div className="text-[10px] text-[#56715b] uppercase font-bold mb-1 flex items-center justify-between">
+              <span>Level 3</span>
+              <span className="text-[#7b817a] font-normal">Group</span>
+            </div>
             <div className="font-bold text-[#20221f] text-sm">📁 Chapter</div>
             <div className="text-[#7b817a] text-[11px] mt-1">Logical grouping & module folders</div>
           </div>
 
-          <div className="p-4 bg-[#fdfdfb] rounded-lg border border-[#e2e5df] shadow-sm">
-            <div className="text-[10px] text-[#56715b] uppercase font-bold mb-1">Level 4</div>
+          <div className="p-4 bg-[#fdfdfb] rounded-lg border border-[#e2e5df] shadow-sm hover:border-[#56715b]/30 transition-colors">
+            <div className="text-[10px] text-[#56715b] uppercase font-bold mb-1 flex items-center justify-between">
+              <span>Level 4</span>
+              <span className="text-[#7b817a] font-normal">Document</span>
+            </div>
             <div className="font-bold text-[#20221f] text-sm">📄 Page</div>
             <div className="text-[#7b817a] text-[11px] mt-1">Markdown, math, & live code document</div>
           </div>
@@ -289,16 +291,16 @@ export default function LandingPage() {
       </section>
 
       {/* CALL TO ACTION WAITLIST BANNER */}
-      <section id="waitlist" className="py-20 px-6 max-w-4xl mx-auto text-center">
-        <div className="p-10 rounded-2xl bg-[#56715b] text-[#f8f8f6] shadow-xl relative overflow-hidden">
+      <section id="waitlist" className="py-10 sm:py-20 px-4 sm:px-6 max-w-4xl mx-auto text-center">
+        <div className="p-6 sm:p-10 rounded-2xl bg-[#56715b] text-[#f8f8f6] shadow-xl relative overflow-hidden">
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f8f8f6]/15 text-[#f8f8f6] font-mono text-xs mb-4">
-              <span>SERENE DISTRACTION-FREE WRITING</span>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f8f8f6]/15 text-[#f8f8f6] font-mono text-[10px] sm:text-xs mb-3 sm:mb-4 max-w-full truncate">
+              <span className="truncate">SERENE DISTRACTION-FREE WRITING</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-medium mb-4 text-balance">
+            <h2 className="text-2xl sm:text-4xl font-serif font-medium mb-3 sm:mb-4 text-balance">
               Experience distraction-free writing.
             </h2>
-            <p className="text-sm sm:text-base text-[#f8f8f6]/80 max-w-xl mx-auto mb-8">
+            <p className="text-xs sm:text-base text-[#f8f8f6]/80 max-w-xl mx-auto mb-6 sm:mb-8 text-balance">
               Join the private waitlist to get early beta access when we launch.
             </p>
             <div className="flex justify-center">
@@ -306,10 +308,11 @@ export default function LandingPage() {
                 href="http://ullaskunder.com/contact"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3.5 rounded-full bg-[#f8f8f6] text-[#38503d] text-sm font-semibold hover:bg-[#e9eee8] transition-all flex items-center gap-2 shadow-md hover:scale-105"
+                className="w-full xs:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#f8f8f6] text-[#38503d] text-xs sm:text-sm font-semibold hover:bg-[#e9eee8] transition-all flex items-center justify-center gap-2 shadow-md hover:scale-105 active:scale-95"
               >
-                <span>Join Waitlist at ullaskunder.com</span>
-                <ExternalLink className="size-4" />
+                <span>Join Waitlist</span>
+                <span className="hidden xs:inline">at ullaskunder.com</span>
+                <ExternalLink className="size-3.5 sm:size-4 shrink-0" />
               </a>
             </div>
           </div>
@@ -317,9 +320,9 @@ export default function LandingPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-10 px-6 border-t border-[#e2e5df] text-xs text-[#7b817a]">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
+      <footer className="py-8 sm:py-10 px-4 sm:px-6 border-t border-[#e2e5df] text-xs text-[#7b817a]">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
             <img 
               src="/ullaskunder.svg" 
               alt="Ullas Kunder Bear Logo" 
@@ -329,7 +332,7 @@ export default function LandingPage() {
             <span>• built by <a href="http://ullaskunder.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#56715b]">ullaskunder.com</a></span>
           </div>
 
-          <div className="flex items-center gap-6 font-mono text-[11px]">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 font-mono text-[11px]">
             <span className="flex items-center gap-1.5 text-[#56715b]">
               <span className="size-2 rounded-full bg-[#56715b] animate-pulse" />
               Clean Minimal Writing Canvas
@@ -342,3 +345,4 @@ export default function LandingPage() {
     </div>
   );
 }
+
