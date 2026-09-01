@@ -69,7 +69,7 @@ export default function LandingPage() {
           {/* Left: Clean Bear Icon + Kiroku Title */}
           <div className="flex items-center gap-2 sm:gap-2.5">
             <img 
-              src="/ullaskunder.svg" 
+              src="/logo.png" 
               alt="Kiroku Logo" 
               className="size-6 sm:size-7 rounded-full object-contain p-0.5 bg-[#e9eee8] border border-[#56715b]/20"
             />
@@ -105,10 +105,13 @@ export default function LandingPage() {
         {/* Subtle background glow */}
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-[#f1e7d6]/60 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-        {/* Eyebrow Badge */}
-        <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-[#f1e7d6] text-[#765f3e] border border-[#e2e5df] text-[11px] sm:text-xs font-mono mb-5 sm:mb-6 shadow-xs max-w-full truncate">
-          <Feather className="size-3 sm:size-3.5 text-[#56715b] shrink-0" />
-          <span className="truncate">Distraction-Free Writing</span>
+        {/* Big Centered Hero Transparent Logo */}
+        <div className="mb-6 sm:mb-8 flex flex-col items-center">
+          <img 
+            src="/logo.png" 
+            alt="Kiroku Logo" 
+            className="h-20 sm:h-28 md:h-36 w-auto object-contain drop-shadow-md"
+          />
         </div>
 
         {/* Hero Title */}
@@ -323,8 +326,8 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
             <img 
-              src="/ullaskunder.svg" 
-              alt="Ullas Kunder Bear Logo" 
+              src="/logo.png" 
+              alt="Kiroku Logo" 
               className="size-6 rounded-full object-contain p-0.5 bg-[#e9eee8] border border-[#56715b]/20"
             />
             <span className="font-semibold text-[#20221f]">Kiroku</span>

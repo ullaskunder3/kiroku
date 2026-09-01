@@ -19,10 +19,16 @@ export const metadata: Metadata = {
   authors: [{ name: "Ullas Kunder", url: "http://ullaskunder.com/" }],
   creator: "Ullas Kunder",
   publisher: "Ullas Kunder",
+  manifest: "/manifest.json",
   icons: {
-    icon: "/ullaskunder.svg",
-    shortcut: "/ullaskunder.svg",
-    apple: "/ullaskunder.svg",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   openGraph: {
     title: "Kiroku: Minimalist Living Library",
