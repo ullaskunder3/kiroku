@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import {
   ArrowRight,
   Mail,
@@ -335,10 +336,12 @@ export default function LandingPage() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 font-mono text-[11px]">
-            <span className="flex items-center gap-1.5 text-[#56715b]">
-              <span className="size-2 rounded-full bg-[#56715b] animate-pulse" />
-              Clean Minimal Writing Canvas
-            </span>
+            <Link href="/privacy" className="hover:underline hover:text-[#20221f]">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:underline hover:text-[#20221f]">
+              Terms of Service
+            </Link>
             <a href="http://ullaskunder.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">ullaskunder.com</a>
           </div>
         </div>
