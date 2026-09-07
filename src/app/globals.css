@@ -46,6 +46,10 @@
   --sidebar: #f1f3ef;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
