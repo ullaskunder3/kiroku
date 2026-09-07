@@ -1,14 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
-  Mail,
-  Play,
-  Pause,
-  Volume2,
-  VolumeX,
   ExternalLink,
   Feather,
   Zap,
@@ -16,24 +12,13 @@ import {
   Check,
   Sparkles,
   Layers,
-  Database,
-  Lock,
-  Eye,
   BookOpen,
-  FolderGit2,
-  FileCode,
-  Palette,
   Cloud,
-  FileDown,
-  History,
-  RotateCcw,
   Brain,
   Mic,
   Server,
   Workflow,
   Key,
-  Cpu,
-  Radio,
   HardDrive,
   Building2,
   FolderTree,
@@ -47,8 +32,8 @@ export default function LandingPage() {
   // Mobile Nav Menu State
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
-  // Interactive Launching Transition State
-  const [isLaunchingApp, setIsLaunchingApp] = useState<boolean>(false);
+  // Demo Image Pop-up animation state
+  const [isPopping, setIsPopping] = useState<boolean>(false);
 
   // Scroll Animation State for 3D Laptop Screen Opening Effect
   const [rotateX, setRotateX] = useState<number>(22);
@@ -57,10 +42,15 @@ export default function LandingPage() {
   // Pricing Billing Selection State: 'annual' | 'monthly'
   const [billingCycle, setBillingCycle] = useState<"annual" | "monthly">("annual");
 
-  // Interactive Lab & Future Horizons State
-  const [activeLabTab, setActiveLabTab] = useState<"canvas" | "media" | "infra">("canvas");
-  const [isPlayingAudioDemo, setIsPlayingAudioDemo] = useState<boolean>(true);
-  const [selectedInfraProvider, setSelectedInfraProvider] = useState<"aws" | "turso" | "local">("aws");
+  const handleDemoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (isPopping) return;
+    setIsPopping(true);
+    // Seamless cinematic dive-in redirect without waiting to stop
+    setTimeout(() => {
+      window.location.href = "https://app.kiroku.xyz";
+    }, 180);
+  };
 
   // Scroll Listener for Laptop Screen Unfolding Effect
   useEffect(() => {
@@ -91,10 +81,13 @@ export default function LandingPage() {
           
           {/* Left: Animated Kiroku Logo + Title */}
           <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group">
-            <img 
+            <Image 
               src="/animated.svg" 
               alt="Kiroku Logo" 
+              width={32}
+              height={32}
               className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105"
+              priority
             />
             <span className="font-semibold text-sm sm:text-base tracking-tight text-[#20221f]">
               Kiroku
@@ -104,10 +97,16 @@ export default function LandingPage() {
           {/* Center: Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-[#7b817a]">
             <a href="#showcase" className="hover:text-[#20221f] transition-colors">Preview</a>
-            <a href="#philosophy" className="hover:text-[#20221f] transition-colors">Philosophy</a>
             <a href="#planning" className="hover:text-[#20221f] transition-colors">Planning</a>
             <a href="#pricing" className="hover:text-[#20221f] transition-colors">Pricing</a>
-            <a href="#waitlist" className="hover:text-[#20221f] transition-colors">Early Access</a>
+            <a 
+              href="https://www.ullaskunder.com/contact" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-[#20221f] transition-colors"
+            >
+              Contact
+            </a>
           </nav>
 
           {/* Right: Actions */}
@@ -144,14 +143,6 @@ export default function LandingPage() {
               <ChevronRight className="size-3.5 text-[#7b817a]" />
             </a>
             <a
-              href="#philosophy"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-xl hover:bg-[#e9eee8] text-[#20221f] transition-colors flex items-center justify-between"
-            >
-              <span>Philosophy</span>
-              <ChevronRight className="size-3.5 text-[#7b817a]" />
-            </a>
-            <a
               href="#planning"
               onClick={() => setIsMobileMenuOpen(false)}
               className="px-3.5 py-2.5 rounded-xl hover:bg-[#e9eee8] text-[#20221f] transition-colors flex items-center justify-between"
@@ -168,11 +159,13 @@ export default function LandingPage() {
               <ChevronRight className="size-3.5 text-[#7b817a]" />
             </a>
             <a
-              href="#waitlist"
+              href="https://www.ullaskunder.com/contact"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
               className="px-3.5 py-2.5 rounded-xl hover:bg-[#e9eee8] text-[#20221f] transition-colors flex items-center justify-between"
             >
-              <span>Early Access</span>
+              <span>Need Help / Contact</span>
               <ChevronRight className="size-3.5 text-[#7b817a]" />
             </a>
             <div className="pt-2 border-t border-[#e2e5df]">
@@ -195,10 +188,13 @@ export default function LandingPage() {
 
         {/* Centered Hero Animated SVG Logo - Enriched & Bigger */}
         <div className="mb-6 sm:mb-8 flex flex-col items-center">
-          <img 
+          <Image 
             src="/animated.svg" 
             alt="Kiroku Logo" 
-            className="h-28 sm:h-40 md:h-48 lg:h-56 w-auto max-w-[85vw] object-contain drop-shadow-sm transition-transform hover:scale-105 duration-300"
+            width={224}
+            height={224}
+            className="h-28 sm:h-40 md:h-48 lg:h-56 w-auto max-w-[85vw] object-contain drop-shadow-sm"
+            priority
           />
         </div>
 
@@ -236,100 +232,46 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* 3D SCROLL LAPTOP SCREEN FLIP VIDEO SHOWCASE */}
-      <section id="showcase" className="py-6 sm:py-8 px-3 sm:px-6 max-w-5xl mx-auto scroll-mt-24 sm:scroll-mt-28">
+      {/* 3D SCROLL LAPTOP SCREEN FLIP PREVIEW SHOWCASE */}
+      <section id="showcase" className="py-6 sm:py-10 px-2 sm:px-6 max-w-6xl mx-auto scroll-mt-24 sm:scroll-mt-28 relative z-20">
         
         {/* 3D Perspective Container */}
         <div 
-          className="w-full transition-transform duration-150 ease-out"
+          className="w-full transition-all duration-300 ease-out"
           style={{
-            perspective: "1200px",
+            perspective: "1400px",
           }}
         >
-          {/* Sleek Minimal App Window Container */}
           <div
-            className="relative rounded-2xl sm:rounded-3xl border border-[#e2e5df] bg-[#1e201d] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-200 ease-out"
+            onClick={handleDemoClick}
+            className={`cursor-pointer block relative rounded-2xl sm:rounded-3xl border border-[#e2e5df] bg-[#fdfdfb] overflow-hidden group will-change-transform ${
+              isPopping
+                ? "shadow-[0_40px_100px_rgba(0,0,0,0.28)] border-[#56715b]/50 z-30"
+                : "shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.12)] hover:-translate-y-1"
+            }`}
             style={{
-              transform: `rotateX(${rotateX}deg) scale(${scaleVal})`,
+              transform: isPopping
+                ? `rotateX(0deg) scale(1.08) translateY(-16px)`
+                : `rotateX(${rotateX}deg) scale(${scaleVal})`,
               transformOrigin: "center bottom",
               transformStyle: "preserve-3d",
+              transition: isPopping
+                ? "transform 350ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 350ms ease-out, border-color 200ms ease-out"
+                : "transform 150ms ease-out, box-shadow 200ms ease-out",
             }}
           >
-            {/* Sleek Modern Window Control Bar */}
-            <div className="bg-[#181a17] h-8 sm:h-9 w-full flex items-center justify-between px-3.5 sm:px-4 border-b border-[#2a2d28] text-[#7b817a] text-[11px] font-mono">
-              <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1.5">
-                  <span className="size-2.5 rounded-full bg-[#ff5f56]/80" />
-                  <span className="size-2.5 rounded-full bg-[#ffbd2e]/80" />
-                  <span className="size-2.5 rounded-full bg-[#27c93f]/80" />
-                </div>
-                <span className="text-[#a0a59d] font-sans font-medium text-[11px] sm:text-xs ml-2 truncate">Kiroku • Distraction-Free Canvas</span>
-              </div>
-              
-              <div className="hidden sm:flex items-center gap-2 text-[10px] text-[#7b817a]">
-                <span className="size-1.5 rounded-full bg-[#56715b] animate-pulse" />
-                <span>Live Preview</span>
-              </div>
-            </div>
-
-            {/* Interactive Promo Canvas Wrapper with Launch Transition */}
-            <div 
-              onClick={() => {
-                setIsLaunchingApp(true);
-                setTimeout(() => {
-                  window.location.href = "https://app.kiroku.xyz";
-                }, 280);
-              }}
-              className="relative aspect-[16/10] w-full bg-[#181a17] group overflow-hidden cursor-pointer select-none"
-            >
-              {/* High-Res Promo Screenshot */}
-              <img
-                src="/promo.png"
-                alt="Kiroku Editor Living Canvas"
-                className={`w-full h-full object-cover object-top transition-all duration-300 group-hover:scale-[1.015] ${
-                  isLaunchingApp ? 'scale-105 filter brightness-110 blur-[1px]' : ''
-                }`}
-              />
-
-              {/* Interactive Hover Overlay & Launching Indicator */}
-              <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex flex-col justify-between p-4 sm:p-6 transition-all duration-200 ${
-                isLaunchingApp ? 'opacity-100 bg-black/40' : 'opacity-90 sm:opacity-0 sm:group-hover:opacity-100'
-              }`}>
-                <div className="flex items-center justify-between text-white text-xs font-mono">
-                  <span className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5 shadow-sm">
-                    <span className="size-2 rounded-full bg-[#56715b] animate-ping" />
-                    <span>Live Distraction-Free Workspace</span>
-                  </span>
-                  <span className="hidden sm:inline-block bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[#56715b]">
-                    Instant Local Speed
-                  </span>
-                </div>
-
-                <div className="flex items-center justify-center">
-                  <div className={`px-5 py-2.5 rounded-full bg-[#56715b] text-[#f8f8f6] font-mono text-xs sm:text-sm font-semibold shadow-2xl flex items-center gap-2 transition-all transform ${
-                    isLaunchingApp ? 'scale-110 bg-[#38503d]' : 'group-hover:scale-105'
-                  }`}>
-                    {isLaunchingApp ? (
-                      <>
-                        <span className="size-3.5 rounded-full border-2 border-white border-t-transparent animate-spin" />
-                        <span>Launching Kiroku App...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Sparkles className="size-4" />
-                        <span>Click anywhere to launch live app</span>
-                        <ExternalLink className="size-3.5" />
-                      </>
-                    )}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between text-white/80 text-[11px] font-mono">
-                  <span>No login required to test sandbox</span>
-                  <span>app.kiroku.xyz ↗</span>
-                </div>
-              </div>
-            </div>
+            <Image
+              src="/promo.png"
+              alt="Kiroku Editor Living Canvas"
+              width={1920}
+              height={966}
+              className={`w-full h-auto object-cover rounded-2xl sm:rounded-3xl will-change-transform ${
+                isPopping 
+                  ? "scale-[1.015] brightness-[1.03] transition-all duration-300 ease-out" 
+                  : "transition-transform duration-300 group-hover:scale-[1.008]"
+              }`}
+              priority
+            />
           </div>
         </div>
       </section>
@@ -1047,25 +989,64 @@ export default function LandingPage() {
 
       {/* FOOTER */}
       <footer className="py-8 sm:py-10 px-4 sm:px-6 border-t border-[#e2e5df] text-xs text-[#7b817a]">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-            <img 
-              src="/animated.svg" 
-              alt="Kiroku Logo" 
-              className="h-6 w-auto object-contain"
-            />
-            <span className="font-semibold text-[#20221f]">Kiroku</span>
-            <span>• built by <a href="http://ullaskunder.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#56715b]">ullaskunder.com</a></span>
+        <div className="max-w-5xl mx-auto space-y-6">
+          
+          {/* Bug / Support Callout */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#fdfdfb] border border-[#e2e5df] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left shadow-2xs">
+            <div className="flex items-center gap-2.5">
+              <span className="size-2 rounded-full bg-[#56715b] shrink-0" />
+              <p className="text-xs sm:text-sm text-[#50544f]">
+                Facing a bug, glitch, or error? Contact{" "}
+                <a 
+                  href="mailto:ullaskunder3@gmail.com" 
+                  className="font-medium text-[#20221f] underline hover:text-[#56715b] transition-colors"
+                >
+                  ullaskunder3@gmail.com
+                </a>{" "}
+                or visit{" "}
+                <a 
+                  href="https://www.ullaskunder.com/contact" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="font-medium text-[#20221f] underline hover:text-[#56715b] transition-colors inline-flex items-center gap-0.5"
+                >
+                  ullaskunder.com/contact
+                  <ExternalLink className="size-3 text-[#7b817a]" />
+                </a>.
+              </p>
+            </div>
+            <a
+              href="https://www.ullaskunder.com/contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-1.5 rounded-full bg-[#e9eee8] hover:bg-[#56715b] hover:text-[#f8f8f6] text-[#38503d] font-mono text-xs font-medium transition-all shrink-0"
+            >
+              Report a Bug ↗
+            </a>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 font-mono text-[11px]">
-            <Link href="/privacy" className="hover:underline hover:text-[#20221f]">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:underline hover:text-[#20221f]">
-              Terms of Service
-            </Link>
-            <a href="http://ullaskunder.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">ullaskunder.com</a>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left pt-1">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+              <Image 
+                src="/animated.svg" 
+                alt="Kiroku Logo" 
+                width={24}
+                height={24}
+                className="h-6 w-auto object-contain"
+              />
+              <span className="font-semibold text-[#20221f]">Kiroku</span>
+              <span>• built by <a href="http://ullaskunder.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#56715b]">ullaskunder.com</a></span>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 font-mono text-[11px]">
+              <Link href="/privacy" className="hover:underline hover:text-[#20221f]">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:underline hover:text-[#20221f]">
+                Terms of Service
+              </Link>
+              <a href="http://ullaskunder.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">ullaskunder.com</a>
+            </div>
           </div>
         </div>
       </footer>
