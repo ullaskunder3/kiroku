@@ -47,10 +47,8 @@ export default function LandingPage() {
   // Mobile Nav Menu State
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
-  // Video State
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
-  const [isMuted, setIsMuted] = useState<boolean>(true);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  // Interactive Launching Transition State
+  const [isLaunchingApp, setIsLaunchingApp] = useState<boolean>(false);
 
   // Scroll Animation State for 3D Laptop Screen Opening Effect
   const [rotateX, setRotateX] = useState<number>(22);
@@ -83,23 +81,6 @@ export default function LandingPage() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
-  };
-
-  const toggleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
-  };
 
   return (
     <div className="min-h-screen bg-[#f8f8f6] text-[#20221f] selection:bg-[#56715b]/20 selection:text-[#20221f]">
@@ -291,55 +272,61 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Clear Video Canvas Wrapper */}
-            <div className="relative aspect-[16/10] w-full bg-black group overflow-hidden">
-              <video
-                ref={videoRef}
-                src="/kiroku-demo.mp4"
-                autoPlay
-                loop
-                muted={isMuted}
-                playsInline
-                className="w-full h-full object-cover"
+            {/* Interactive Promo Canvas Wrapper with Launch Transition */}
+            <div 
+              onClick={() => {
+                setIsLaunchingApp(true);
+                setTimeout(() => {
+                  window.location.href = "https://app.kiroku.xyz";
+                }, 280);
+              }}
+              className="relative aspect-[16/10] w-full bg-[#181a17] group overflow-hidden cursor-pointer select-none"
+            >
+              {/* High-Res Promo Screenshot */}
+              <img
+                src="/promo.png"
+                alt="Kiroku Editor Living Canvas"
+                className={`w-full h-full object-cover object-top transition-all duration-300 group-hover:scale-[1.015] ${
+                  isLaunchingApp ? 'scale-105 filter brightness-110 blur-[1px]' : ''
+                }`}
               />
 
-              {/* Video Overlay Controls - Touch and Desktop Friendly */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 sm:p-4 pointer-events-none">
-                <div className="flex items-center justify-between text-white/90 text-[10px] sm:text-xs font-mono pointer-events-auto gap-2">
-                  <span className="bg-black/40 backdrop-blur px-2.5 py-1 rounded border border-white/10 truncate">
-                    Live Demo Recording
+              {/* Interactive Hover Overlay & Launching Indicator */}
+              <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex flex-col justify-between p-4 sm:p-6 transition-all duration-200 ${
+                isLaunchingApp ? 'opacity-100 bg-black/40' : 'opacity-90 sm:opacity-0 sm:group-hover:opacity-100'
+              }`}>
+                <div className="flex items-center justify-between text-white text-xs font-mono">
+                  <span className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5 shadow-sm">
+                    <span className="size-2 rounded-full bg-[#56715b] animate-ping" />
+                    <span>Live Distraction-Free Workspace</span>
                   </span>
-                  <span className="hidden xs:inline-block bg-black/40 backdrop-blur px-2.5 py-1 rounded border border-white/10 text-[#56715b] shrink-0">
-                    ● What You See Is What You Get
+                  <span className="hidden sm:inline-block bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[#56715b]">
+                    Instant Local Speed
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between text-white pointer-events-auto gap-2">
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <button
-                      onClick={togglePlay}
-                      className="size-8 sm:size-9 rounded-full bg-white/20 backdrop-blur flex items-center justify-center hover:bg-white/30 active:scale-95 transition-all"
-                      title={isPlaying ? "Pause" : "Play"}
-                    >
-                      {isPlaying ? <Pause className="size-4 text-white" /> : <Play className="size-4 text-white fill-white ml-0.5" />}
-                    </button>
-
-                    <button
-                      onClick={toggleMute}
-                      className="size-8 sm:size-9 rounded-full bg-white/20 backdrop-blur flex items-center justify-center hover:bg-white/30 active:scale-95 transition-all"
-                      title={isMuted ? "Unmute" : "Mute"}
-                    >
-                      {isMuted ? <VolumeX className="size-4 text-white" /> : <Volume2 className="size-4 text-white" />}
-                    </button>
+                <div className="flex items-center justify-center">
+                  <div className={`px-5 py-2.5 rounded-full bg-[#56715b] text-[#f8f8f6] font-mono text-xs sm:text-sm font-semibold shadow-2xl flex items-center gap-2 transition-all transform ${
+                    isLaunchingApp ? 'scale-110 bg-[#38503d]' : 'group-hover:scale-105'
+                  }`}>
+                    {isLaunchingApp ? (
+                      <>
+                        <span className="size-3.5 rounded-full border-2 border-white border-t-transparent animate-spin" />
+                        <span>Launching Kiroku App...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="size-4" />
+                        <span>Click anywhere to launch live app</span>
+                        <ExternalLink className="size-3.5" />
+                      </>
+                    )}
                   </div>
+                </div>
 
-                  <a
-                    href="https://app.kiroku.xyz"
-                    className="text-[10px] sm:text-xs font-mono text-white/90 bg-[#56715b] hover:bg-[#56715b]/90 backdrop-blur px-3.5 py-1.5 rounded-full shadow transition-all flex items-center gap-1.5 whitespace-nowrap"
-                  >
-                    <span>Try Live App</span>
-                    <ExternalLink className="size-3" />
-                  </a>
+                <div className="flex items-center justify-between text-white/80 text-[11px] font-mono">
+                  <span>No login required to test sandbox</span>
+                  <span>app.kiroku.xyz ↗</span>
                 </div>
               </div>
             </div>
