@@ -58,7 +58,7 @@ export default function LandingPage() {
       const scrollY = window.scrollY;
       const maxScroll = 400;
       const progress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
-      
+
       const newRotate = 22 * (1 - progress);
       const newScale = 0.92 + 0.08 * progress;
 
@@ -74,16 +74,16 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f8f6] text-[#20221f] selection:bg-[#56715b]/20 selection:text-[#20221f]">
-      
+
       {/* FLOATING PILL HEADER - CLEAN & RESPONSIVE */}
       <header className="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 z-50 w-[94%] sm:w-[92%] max-w-4xl">
         <div className="bg-[#fdfdfb]/90 backdrop-blur-md border border-[#e2e5df] rounded-full px-3.5 sm:px-5 h-12 sm:h-13 flex items-center justify-between shadow-sm transition-all hover:border-[#56715b]/30">
-          
+
           {/* Left: Animated Kiroku Logo + Title */}
           <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group">
-            <Image 
-              src="/animated.svg" 
-              alt="Kiroku Logo" 
+            <Image
+              src="/animated.svg"
+              alt="Kiroku Logo"
               width={32}
               height={32}
               className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105"
@@ -99,9 +99,9 @@ export default function LandingPage() {
             <a href="#showcase" className="hover:text-[#20221f] transition-colors">Preview</a>
             <a href="#planning" className="hover:text-[#20221f] transition-colors">Planning</a>
             <a href="#pricing" className="hover:text-[#20221f] transition-colors">Pricing</a>
-            <a 
-              href="https://www.ullaskunder.com/contact" 
-              target="_blank" 
+            <a
+              href="https://www.ullaskunder.com/contact"
+              target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#20221f] transition-colors"
             >
@@ -112,7 +112,7 @@ export default function LandingPage() {
           {/* Right: Actions */}
           <div className="flex items-center gap-2">
             {/* Desktop Open App CTA */}
-            <a 
+            <a
               href="https://app.kiroku.xyz"
               className="hidden md:flex bg-[#56715b] text-[#f8f8f6] text-xs px-4.5 py-2 rounded-full font-medium hover:bg-[#56715b]/90 transition-all items-center gap-1.5 shadow-sm whitespace-nowrap"
             >
@@ -188,9 +188,9 @@ export default function LandingPage() {
 
         {/* Centered Hero Animated SVG Logo - Enriched & Bigger */}
         <div className="mb-6 sm:mb-8 flex flex-col items-center">
-          <Image 
-            src="/animated.svg" 
-            alt="Kiroku Logo" 
+          <Image
+            src="/animated.svg"
+            alt="Kiroku Logo"
             width={224}
             height={224}
             className="h-28 sm:h-40 md:h-48 lg:h-56 w-auto max-w-[85vw] object-contain drop-shadow-sm"
@@ -204,9 +204,27 @@ export default function LandingPage() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-sm sm:text-base md:text-lg text-[#7b817a] max-w-2xl leading-relaxed font-normal mb-6 sm:mb-8 text-balance">
+        <p className="text-sm sm:text-base md:text-lg text-[#7b817a] max-w-2xl leading-relaxed font-normal mb-8 sm:mb-10 text-balance">
           No clutter. No redundant popups. What you see is what you get. Clean typography, instant markdown rendering, and seamless edge&nbsp;persistence.
         </p>
+
+        {/* Product Hunt Badge - Centered & Aligned */}
+        <div className="mb-8 sm:mb-10 flex justify-center">
+          <a
+            href="https://www.producthunt.com/products/kiroku-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-kiroku-2"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-90 transition-opacity"
+          >
+            <img
+              alt="Kiroku - Where speed meets serenity for your writing and ideas. | Product Hunt"
+              width="200"
+              height="54"
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1244708&theme=light&t=1788867838507"
+              className="h-auto w-auto max-w-[80vw] sm:max-w-none"
+            />
+          </a>
+        </div>
 
         {/* Hero CTA Button Group - Sleek & Uncluttered */}
         <div className="flex flex-col items-center justify-center gap-2.5 mb-6 sm:mb-8 w-full max-w-sm sm:max-w-none">
@@ -234,9 +252,9 @@ export default function LandingPage() {
 
       {/* 3D SCROLL LAPTOP SCREEN FLIP PREVIEW SHOWCASE */}
       <section id="showcase" className="py-6 sm:py-10 px-2 sm:px-6 max-w-6xl mx-auto scroll-mt-24 sm:scroll-mt-28 relative z-20">
-        
+
         {/* 3D Perspective Container */}
-        <div 
+        <div
           className="w-full transition-all duration-300 ease-out"
           style={{
             perspective: "1400px",
@@ -244,11 +262,10 @@ export default function LandingPage() {
         >
           <div
             onClick={handleDemoClick}
-            className={`cursor-pointer block relative rounded-2xl sm:rounded-3xl border border-[#e2e5df] bg-[#fdfdfb] overflow-hidden group will-change-transform ${
-              isPopping
-                ? "shadow-[0_40px_100px_rgba(0,0,0,0.28)] border-[#56715b]/50 z-30"
-                : "shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.12)] hover:-translate-y-1"
-            }`}
+            className={`cursor-pointer block relative rounded-2xl sm:rounded-3xl border border-[#e2e5df] bg-[#fdfdfb] overflow-hidden group will-change-transform ${isPopping
+              ? "shadow-[0_40px_100px_rgba(0,0,0,0.28)] border-[#56715b]/50 z-30"
+              : "shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.12)] hover:-translate-y-1"
+              }`}
             style={{
               transform: isPopping
                 ? `rotateX(0deg) scale(1.08) translateY(-16px)`
@@ -265,11 +282,10 @@ export default function LandingPage() {
               alt="Kiroku Editor Living Canvas"
               width={1920}
               height={966}
-              className={`w-full h-auto object-cover rounded-2xl sm:rounded-3xl will-change-transform ${
-                isPopping 
-                  ? "scale-[1.015] brightness-[1.03] transition-all duration-300 ease-out" 
-                  : "transition-transform duration-300 group-hover:scale-[1.008]"
-              }`}
+              className={`w-full h-auto object-cover rounded-2xl sm:rounded-3xl will-change-transform ${isPopping
+                ? "scale-[1.015] brightness-[1.03] transition-all duration-300 ease-out"
+                : "transition-transform duration-300 group-hover:scale-[1.008]"
+                }`}
               priority
             />
           </div>
@@ -284,11 +300,11 @@ export default function LandingPage() {
             <Workflow className="size-3.5 text-[#56715b]" />
             <span>In Active Development · Future Horizons</span>
           </div>
-          
+
           <h2 className="text-2xl sm:text-4xl font-serif font-medium text-[#20221f] mb-3 text-balance">
             Big Architecture. Zero Bloat.
           </h2>
-          
+
           <p className="text-xs sm:text-sm text-[#7b817a] max-w-xl mx-auto leading-relaxed mb-4">
             Engineered on lean foundations. Powered by early subscriber backing to scale dedicated AWS edge infrastructure and visual tools.
           </p>
@@ -301,7 +317,7 @@ export default function LandingPage() {
 
         {/* OPEN BENTO GRID SHOWCASE (SEAMLESS INTEGRATION) */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-          
+
           {/* CARD 1: MIND CANVAS (2 COLUMNS) */}
           <div className="lg:col-span-2 rounded-2xl bg-[#fdfdfb] border border-[#e2e5df] p-6 sm:p-7 shadow-sm hover:border-[#56715b]/40 transition-all flex flex-col justify-between gap-6">
             <div className="flex items-center justify-between">
@@ -372,7 +388,7 @@ export default function LandingPage() {
                 <span className="text-[#20221f] font-semibold">Voice Memo Stream</span>
                 <span className="text-[#56715b]">02:14 / 04:30</span>
               </div>
-              
+
               <div className="flex items-center gap-1 h-8 px-2 py-1 bg-[#fdfdfb] rounded-lg border border-[#e2e5df]">
                 {[30, 60, 45, 90, 70, 100, 50, 85, 40, 95, 65, 45, 80, 55, 100, 35, 75, 50, 85, 30].map((h, i) => (
                   <span
@@ -411,7 +427,7 @@ export default function LandingPage() {
 
             {/* 3 Architecture Pillars Side by Side */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-              
+
               {/* Pillar 1 */}
               <div className="p-4 rounded-xl bg-[#f8f8f6] border border-[#e2e5df] space-y-1.5 shadow-2xs">
                 <div className="flex items-center gap-2 text-[#56715b] font-bold text-[11px]">
@@ -472,13 +488,13 @@ export default function LandingPage() {
           <Sparkles className="size-3.5" />
           <span>The Philosophy</span>
         </div>
-        
+
         <blockquote className="font-serif text-2xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#20221f] leading-[1.25] sm:leading-[1.2] mb-6 sm:mb-8 text-balance max-w-3xl mx-auto">
           &ldquo;Less noise. More clarity.
           <br />
           When your tools get out of the way, your ideas come alive.&rdquo;
         </blockquote>
-        
+
         <p className="text-sm sm:text-base md:text-lg text-[#7b817a] max-w-2xl mx-auto leading-relaxed font-normal text-balance mb-10">
           Crafted for thinkers, creators, and teams who value focus, quiet precision, and effortless organization.
         </p>
@@ -519,7 +535,7 @@ export default function LandingPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-          
+
           {/* Feature 1: Fluid Typography Rhythm */}
           <div className="p-6 sm:p-8 bg-[#fdfdfb] rounded-2xl border border-[#e2e5df] shadow-sm hover:border-[#56715b]/40 transition-all flex flex-col justify-between">
             <div>
@@ -620,7 +636,7 @@ export default function LandingPage() {
           <div className="hidden lg:block absolute top-[4.5rem] left-12 right-12 h-[2px] bg-gradient-to-r from-[#e2e5df] via-[#56715b]/40 to-[#e2e5df] z-0" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative z-10">
-            
+
             {/* LEVEL 1: LIBRARY */}
             <div className="group relative flex flex-col p-6 rounded-2xl bg-[#fdfdfb] border border-[#e2e5df] hover:border-[#56715b]/40 shadow-sm hover:shadow-md transition-all">
               <div className="flex items-center justify-between w-full mb-4">
@@ -731,7 +747,7 @@ export default function LandingPage() {
 
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-          
+
           {/* TIER 1: FREE TIER — "SERENE SANDBOX" */}
           <div className="bg-[#fdfdfb] rounded-2xl border border-[#e2e5df] p-6 sm:p-8 flex flex-col justify-between shadow-sm relative">
             <div>
@@ -827,22 +843,20 @@ export default function LandingPage() {
                 <button
                   type="button"
                   onClick={() => setBillingCycle("annual")}
-                  className={`flex-1 py-1.5 px-2 rounded-lg transition-all text-center cursor-pointer ${
-                    billingCycle === "annual"
-                      ? "bg-[#56715b] text-[#f8f8f6] font-semibold shadow-xs"
-                      : "text-[#7b817a] hover:text-[#20221f]"
-                  }`}
+                  className={`flex-1 py-1.5 px-2 rounded-lg transition-all text-center cursor-pointer ${billingCycle === "annual"
+                    ? "bg-[#56715b] text-[#f8f8f6] font-semibold shadow-xs"
+                    : "text-[#7b817a] hover:text-[#20221f]"
+                    }`}
                 >
                   Annual (15% Off)
                 </button>
                 <button
                   type="button"
                   onClick={() => setBillingCycle("monthly")}
-                  className={`flex-1 py-1.5 px-2 rounded-lg transition-all text-center cursor-pointer ${
-                    billingCycle === "monthly"
-                      ? "bg-[#56715b] text-[#f8f8f6] font-semibold shadow-xs"
-                      : "text-[#7b817a] hover:text-[#20221f]"
-                  }`}
+                  className={`flex-1 py-1.5 px-2 rounded-lg transition-all text-center cursor-pointer ${billingCycle === "monthly"
+                    ? "bg-[#56715b] text-[#f8f8f6] font-semibold shadow-xs"
+                    : "text-[#7b817a] hover:text-[#20221f]"
+                    }`}
                 >
                   Monthly
                 </button>
@@ -990,24 +1004,24 @@ export default function LandingPage() {
       {/* FOOTER */}
       <footer className="py-8 sm:py-10 px-4 sm:px-6 border-t border-[#e2e5df] text-xs text-[#7b817a]">
         <div className="max-w-5xl mx-auto space-y-6">
-          
+
           {/* Bug / Support Callout */}
           <div className="p-4 sm:p-5 rounded-2xl bg-[#fdfdfb] border border-[#e2e5df] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left shadow-2xs">
             <div className="flex items-center gap-2.5">
               <span className="size-2 rounded-full bg-[#56715b] shrink-0" />
               <p className="text-xs sm:text-sm text-[#50544f]">
                 Facing a bug, glitch, or error? Contact{" "}
-                <a 
-                  href="mailto:ullaskunder3@gmail.com" 
+                <a
+                  href="mailto:ullaskunder3@gmail.com"
                   className="font-medium text-[#20221f] underline hover:text-[#56715b] transition-colors"
                 >
                   ullaskunder3@gmail.com
                 </a>{" "}
                 or visit{" "}
-                <a 
-                  href="https://www.ullaskunder.com/contact" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://www.ullaskunder.com/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-medium text-[#20221f] underline hover:text-[#56715b] transition-colors inline-flex items-center gap-0.5"
                 >
                   ullaskunder.com/contact
@@ -1027,9 +1041,9 @@ export default function LandingPage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left pt-1">
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-              <Image 
-                src="/animated.svg" 
-                alt="Kiroku Logo" 
+              <Image
+                src="/animated.svg"
+                alt="Kiroku Logo"
                 width={24}
                 height={24}
                 className="h-6 w-auto object-contain"
