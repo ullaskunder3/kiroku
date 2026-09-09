@@ -218,9 +218,9 @@ export default function LandingPage() {
           >
             <img
               alt="Kiroku - Where speed meets serenity for your writing and ideas. | Product Hunt"
-              width="200"
+              width="250"
               height="54"
-              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1244708&theme=light&t=1788867838507"
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1244708&theme=light&t=1788947824061"
               className="h-auto w-auto max-w-[80vw] sm:max-w-none"
             />
           </a>
