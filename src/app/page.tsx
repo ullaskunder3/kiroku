@@ -1012,16 +1012,6 @@ export default function LandingPage() {
                   className="font-medium text-[#20221f] underline hover:text-[#56715b] transition-colors"
                 >
                   support@kiroku.xyz
-                </a>{" "}
-                or visit{" "}
-                <a
-                  href="https://www.ullaskunder.com/contact"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-[#20221f] underline hover:text-[#56715b] transition-colors inline-flex items-center gap-0.5"
-                >
-                  ullaskunder.com/contact
-                  <ExternalLink className="size-3 text-[#7b817a]" />
                 </a>.
               </p>
             </div>
@@ -1053,7 +1043,6 @@ export default function LandingPage() {
               <Link href="/terms" className="hover:underline hover:text-[#20221f]">
                 Terms of Service
               </Link>
-              <a href="http://ullaskunder.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">ullaskunder.com</a>
             </div>
           </div>
         </div>
