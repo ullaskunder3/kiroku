@@ -100,9 +100,7 @@ export default function LandingPage() {
             <a href="#planning" className="hover:text-[#20221f] transition-colors">Planning</a>
             <a href="#pricing" className="hover:text-[#20221f] transition-colors">Pricing</a>
             <a
-              href="https://www.ullaskunder.com/contact"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:support@kiroku.xyz"
               className="hover:text-[#20221f] transition-colors"
             >
               Contact
@@ -159,9 +157,7 @@ export default function LandingPage() {
               <ChevronRight className="size-3.5 text-[#7b817a]" />
             </a>
             <a
-              href="https://www.ullaskunder.com/contact"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:support@kiroku.xyz"
               onClick={() => setIsMobileMenuOpen(false)}
               className="px-3.5 py-2.5 rounded-xl hover:bg-[#e9eee8] text-[#20221f] transition-colors flex items-center justify-between"
             >
@@ -200,12 +196,12 @@ export default function LandingPage() {
 
         {/* Hero Title */}
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.18] sm:leading-[1.15] text-[#20221f] max-w-3xl mb-4 sm:mb-6 font-serif text-balance">
-          Where speed meets serenity for your writing, organization,&nbsp;and&nbsp;ideas.
+          Notes that open instantly and never lock you in.
         </h1>
 
         {/* Subtitle */}
         <p className="text-sm sm:text-base md:text-lg text-[#7b817a] max-w-2xl leading-relaxed font-normal mb-8 sm:mb-10 text-balance">
-          No clutter. No redundant popups. What you see is what you get. Clean typography, instant markdown rendering, and seamless edge&nbsp;persistence.
+          Write in Markdown with math and diagrams, right in your browser. No install, no setup. Your notes stay on your device — export everything in one&nbsp;click.
         </p>
 
         {/* Product Hunt Badge - Centered & Aligned */}
@@ -232,7 +228,7 @@ export default function LandingPage() {
             href="https://app.kiroku.xyz"
             className="w-full sm:w-auto h-12 px-8 rounded-full bg-[#56715b] text-[#f8f8f6] text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#56715b]/90 active:scale-95 transition-all shadow-md hover:shadow-lg whitespace-nowrap"
           >
-            <span>Start Writing Free</span>
+            <span>Start writing, no account needed</span>
             <ArrowRight className="size-4" />
           </a>
 
@@ -298,7 +294,7 @@ export default function LandingPage() {
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e9eee8] text-[#38503d] font-mono text-xs font-semibold mb-3">
             <Workflow className="size-3.5 text-[#56715b]" />
-            <span>In Active Development · Future Horizons</span>
+            <span>What&apos;s Coming Next</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-serif font-medium text-[#20221f] mb-3 text-balance">
@@ -311,7 +307,7 @@ export default function LandingPage() {
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#56715b]/10 border border-[#56715b]/20 font-mono text-xs text-[#38503d]">
             <span className="size-2 rounded-full bg-[#56715b] animate-pulse" />
-            <span>Dedicated AWS Infra · Backed by Supporters</span>
+            <span>Scaling with Early Subscribers · Privacy-First</span>
           </div>
         </div>
 
@@ -421,7 +417,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <span className="text-[10px] font-mono px-3 py-1 rounded-full bg-[#56715b]/10 text-[#38503d] font-bold border border-[#56715b]/20 shrink-0">
-                Scaling with Supporter Backing
+                Scaling with Early Subscribers
               </span>
             </div>
 
@@ -738,7 +734,7 @@ export default function LandingPage() {
             <span>Transparent Pricing</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-serif font-medium text-[#20221f] mb-3 text-balance">
-            Marketable Pricing Structure
+            Simple, Honest Pricing
           </h2>
           <p className="text-xs sm:text-sm text-[#7b817a] text-balance">
             Start writing in your serene sandbox for free, or power up with infinite scale and cloud backup.
@@ -946,7 +942,7 @@ export default function LandingPage() {
           <div className="space-y-1.5 max-w-lg">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#e9eee8] text-[#38503d] font-mono text-[10px] font-semibold uppercase tracking-wider">
               <Sparkles className="size-3 text-[#56715b]" />
-              <span>Active Sprint & Future Horizons</span>
+              <span>Coming Soon</span>
             </div>
             <h4 className="text-base sm:text-lg font-serif font-medium text-[#20221f]">
               Building the ultimate thinking canvas.
@@ -1012,10 +1008,10 @@ export default function LandingPage() {
               <p className="text-xs sm:text-sm text-[#50544f]">
                 Facing a bug, glitch, or error? Contact{" "}
                 <a
-                  href="mailto:ullaskunder3@gmail.com"
+                  href="mailto:support@kiroku.xyz"
                   className="font-medium text-[#20221f] underline hover:text-[#56715b] transition-colors"
                 >
-                  ullaskunder3@gmail.com
+                  support@kiroku.xyz
                 </a>{" "}
                 or visit{" "}
                 <a
@@ -1030,9 +1026,7 @@ export default function LandingPage() {
               </p>
             </div>
             <a
-              href="https://www.ullaskunder.com/contact"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:support@kiroku.xyz"
               className="px-3.5 py-1.5 rounded-full bg-[#e9eee8] hover:bg-[#56715b] hover:text-[#f8f8f6] text-[#38503d] font-mono text-xs font-medium transition-all shrink-0"
             >
               Report a Bug ↗

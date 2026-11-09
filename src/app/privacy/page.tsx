@@ -189,7 +189,14 @@ export default function PrivacyPolicyPage() {
               </div>
             </div>
             <p className="text-xs sm:text-sm">
-              To request complete deletion of your account and associated data, contact us directly at our{" "}
+              To request complete deletion of your account and associated data, contact us directly at{" "}
+              <a
+                href="mailto:support@kiroku.xyz"
+                className="text-[#56715b] underline font-medium"
+              >
+                support@kiroku.xyz
+              </a>{" "}
+              or via our{" "}
               <a
                 href="https://www.ullaskunder.com/contact"
                 target="_blank"
@@ -250,6 +257,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="p-4 bg-[#fdfdfb] rounded-lg border border-[#e2e5df] text-xs sm:text-sm space-y-1 font-mono">
               <p><span className="text-[#7b817a]">Developer:</span> <strong className="text-[#20221f]">Ullas Kunder</strong></p>
+              <p><span className="text-[#7b817a]">Email:</span> <a href="mailto:support@kiroku.xyz" className="text-[#56715b] underline">support@kiroku.xyz</a></p>
               <p><span className="text-[#7b817a]">Service:</span> <strong className="text-[#20221f]">Kiroku</strong> (<a href="https://kiroku.xyz" className="text-[#56715b] underline">https://kiroku.xyz</a>)</p>
               <p><span className="text-[#7b817a]">Contact Form:</span> <a href="https://www.ullaskunder.com/contact" target="_blank" rel="noopener noreferrer" className="text-[#56715b] underline">https://www.ullaskunder.com/contact</a></p>
               <p><span className="text-[#7b817a]">Website:</span> <a href="http://ullaskunder.com/" target="_blank" rel="noopener noreferrer" className="text-[#56715b] underline">http://ullaskunder.com/</a></p>
